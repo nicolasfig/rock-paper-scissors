@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <script>
+        /*
+            player   | computer | winner
+            --------------------------------
+            rock     | paper    | computer
+            paper    | scissors | computer
+            scissors | rock     | computer
+            rock     | scissors | player
+            paper    | rock     | player
+            scissors | paper    | player
+        */
+        function computerPlay(){
+            let num  = Math.floor(Math.random() * (4-1) + 1)
+            if(num == 1){
+                return "rock"
+            }else if(num == 2){
+                return "paper"
+            }else{
+                return "scissors"
+            }
+        }
+
+        function playerPick(){
+            let pick = prompt("rock paper or scissors?")
+            pick.toLowerCase()
+            if(pick == "rock"){
+                return "rock"
+            }else if(pick == "paper"){
+                return "paper"
+            }else if(pick == "scissors"){
+                return "scissors"
+            }else{
+                alert("Only rock, paper or scissors allowed")
+            }
+        }
+        function playRound(playerSelection, computerSelection){
+            let winner // 0 for computer 1 for player 2 for draw
+            if(playerSelection == computerSelection){
+                winner = 2;
+            }
+            else if(playerSelection == "rock"){
+                if(computerSelection == "paper"){
+                    winner = 0
+                }else if(computerSelection == "scissors"){
+                    winner = 1
+                }
+            }
+            else if(playerSelection == "paper"){
+                if(computerSelection == "scissors"){
+                    winner = 0
+                }else if(computerSelection == "rock"){
+                    winner = 1
+                }
+            }
+            else if(playerSelection == "scissors"){
+                if(computerSelection == "paper"){
+                    winner = 1
+                }else if(computerSelection == "rock"){
+                    winner = 0
+                }
+            }
+            return winner
+        }
+
+        console.log(playRound"")
+        function game(){
+            for(i = 0; i < 5; i++){
+                let winner = playRound(playerPick(), computerPlay())
+                if(winner == 0){
+                    console.log("You Lose! " + computerPlay() + " beats " + playerPick())
+                }else if(winner == 1){
+                    console.log("You Win! " + playerPick() + " beats " + computerPlay())
+                }else{
+                    console.log("Draw")
+                }
+            }
+        }
+        game()
+    </script>
+</body>
+</html>
+
