@@ -29,8 +29,7 @@
             }
         }
 
-        function playerPick(){
-            let pick = prompt("rock paper or scissors?")
+        function playerPick(pick){
             pick.toLowerCase()
             if(pick == "rock"){
                 return "rock"
@@ -71,16 +70,17 @@
             return winner
         }
 
-        console.log(playRound"")
         function game(){
-            for(i = 0; i < 5; i++){
-                let winner = playRound(playerPick(), computerPlay())
-                if(winner == 0){
-                    console.log("You Lose! " + computerPlay() + " beats " + playerPick())
-                }else if(winner == 1){
-                    console.log("You Win! " + playerPick() + " beats " + computerPlay())
-                }else{
-                    console.log("Draw")
+            const computerPick = computerPlay()
+            for(i = 1; i < 6; i++){
+                let pick = prompt("Round "+ i + " rock paper or scissors?")
+                round = playRound(playerPick(pick), computerPick)
+                if(round == 0){
+                    console.log("You Lose! " + computerPick + " beats " + pick)
+                }else if(round == 1){
+                    console.log("You Win! " + pick + " beats " + computerPick)
+                }else if(round == 2){
+                    console.log(pick + " Draw " + computerPick)
                 }
             }
         }
