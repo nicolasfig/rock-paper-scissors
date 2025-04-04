@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap");
+
+* {
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  background-color: rgb(245, 237, 227);
+}
+h1 {
+  font-size: 3em;
+  color: #684777;
+  text-align: center;
+}
+
+.title {
+  font-size: 4em;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9766ad;
+  width: 200px;
+  height: 200px;
+  font-size: 100px;
+}
+
+.option:hover {
+  background-color: #af7dc5;
+  font-size: 110px;
+}

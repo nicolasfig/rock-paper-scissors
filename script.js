@@ -1,6 +1,7 @@
 let humanScore = 0;
 let computerScore = 0;
 let humanChoice = "";
+let results = "";
 
 function randomOption(min, max) {
   const minCeiled = Math.ceil(min);
@@ -26,27 +27,27 @@ function getHumanChoice(option) {
 
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === "rock" && computerChoice === "scissors") {
-    console.log("You win! rock beats scissors");
+    results = "You win! rock beats scissors";
     humanScore += 1;
   } else if (humanChoice === "paper" && computerChoice === "rock") {
-    console.log("You win! paper beats rock");
+    results = "You win! paper beats rock";
     humanScore += 1;
   } else if (humanChoice === "scissors" && computerChoice === "paper") {
-    console.log("You win! scissors beats paper");
+    results = "You win! scissors beats paper";
     humanScore += 1;
   } else if (computerChoice === "rock" && humanChoice === "scissors") {
-    console.log("You lose! rock beats scissors");
+    results = "You lose! rock beats scissors";
     computerScore += 1;
   } else if (computerChoice === "paper" && humanChoice === "rock") {
-    console.log("You lose! paper beats rock");
+    results = "You lose! paper beats rock";
     computerScore += 1;
   } else if (computerChoice === "scissors" && humanChoice === "paper") {
-    console.log("You lose! scissors beats paper");
+    results = "You lose! scissors beats paper";
     computerScore += 1;
   } else if (computerChoice === humanChoice) {
-    console.log("Tie");
+    results = "Tie";
   }
-  console.log(
-    "Human score = " + humanScore + " - Computer score = " + computerScore
-  );
+  document.getElementById("score").innerHTML = humanScore;
+  document.getElementById("com-score").innerHTML = computerScore;
+  document.getElementById("results").innerHTML = results;
 }

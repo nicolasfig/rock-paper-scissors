@@ -4,26 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button
-      type="button"
-      onclick="playRound(getHumanChoice('rock'),getComputerChoice())"
-    >
-      Rock
-    </button>
-    <button
-      type="button"
-      onclick="playRound(getHumanChoice('paper'),getComputerChoice())"
-    >
-      Paper
-    </button>
-    <button
-      type="button"
-      onclick="playRound(getHumanChoice('scissors'),getComputerChoice())"
-    >
-      Scissors
-    </button>
+    <div class="container">
+      <h1 class="title">Rock, Paper, Scissors!</h1>
+      <div class="options">
+        <div
+          class="option"
+          onclick="playRound(getHumanChoice('rock'),getComputerChoice())"
+        >
+          👊
+        </div>
+        <div
+          class="option"
+          onclick="playRound(getHumanChoice('paper'),getComputerChoice())"
+        >
+          ✋
+        </div>
+        <div
+          class="option"
+          onclick="playRound(getHumanChoice('scissors'),getComputerChoice())"
+        >
+          ✌️
+        </div>
+      </div>
+      <h1><span id="results">CHOOSE AN OPTION TO PLAY</span></h1>
+      <h1>HUMAN SCORE = <span id="score">0</span></h1>
+      <h1>COMPUTER SCORE = <span id="com-score">0</span></h1>
+    </div>
 
     <script src="script.js"></script>
   </body>
