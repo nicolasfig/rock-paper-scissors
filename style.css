@@ -44,3 +44,9 @@ h1 {
   background-color: #af7dc5;
   font-size: 110px;
 }
+
+.score-container {
+  display: flex;
+  width: 100vw;
+  justify-content: space-evenly;
+}
